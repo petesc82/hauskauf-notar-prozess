@@ -1,0 +1,5 @@
+{
+  "name": "Quest León: Due Diligence",
+  "description": "A gamified, offline-first PWA for tracking real estate due diligence in León, Mexico. Features quest-based progression, risk mitigation tracking, and bilingual support (ES/DE).",
+  "requestFramePermissions": []
+}
