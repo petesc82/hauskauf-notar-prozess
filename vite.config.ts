@@ -4,6 +4,11 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
   base: '/hauskauf-notar-prozess/',
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true,
+    sourcemap: false
+  },
   plugins: [
     react(),
     VitePWA({
@@ -18,16 +23,19 @@ export default defineConfig({
         display: 'standalone',
         start_url: '/hauskauf-notar-prozess/',
         scope: '/hauskauf-notar-prozess/',
+        orientation: 'portrait',
         icons: [
           {
             src: 'https://picsum.photos/192/192',
             sizes: '192x192',
-            type: 'image/png'
+            type: 'image/png',
+            purpose: 'any maskable'
           },
           {
             src: 'https://picsum.photos/512/512',
             sizes: '512x512',
-            type: 'image/png'
+            type: 'image/png',
+            purpose: 'any maskable'
           }
         ]
       }
