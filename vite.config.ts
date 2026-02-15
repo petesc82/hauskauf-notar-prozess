@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
+  base: '/hauskauf-notar-prozess/',
   plugins: [
     react(),
     VitePWA({
@@ -15,6 +16,8 @@ export default defineConfig({
         theme_color: '#1e293b',
         background_color: '#0f172a',
         display: 'standalone',
+        start_url: '/hauskauf-notar-prozess/',
+        scope: '/hauskauf-notar-prozess/',
         icons: [
           {
             src: 'https://picsum.photos/192/192',

@@ -46,6 +46,7 @@ export interface StepState {
   evidence: Record<string, boolean>; // code -> checked
   notes: string;
   date?: string;
+  chosenPath?: 'pos' | 'neg';
 }
 
 export interface GameState {
