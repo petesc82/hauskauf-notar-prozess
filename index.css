@@ -3,26 +3,79 @@
 @tailwind utilities;
 
 :root {
-  --quest-dark: #0f172a;
+  --quest-bg: #0b1120;
+  --quest-text: #f8fafc;
+  --quest-gold: #fbbf24;
   --quest-panel: #1e293b;
+  --quest-info: #3b82f6;
+  --quest-success: #22c55e;
+}
+
+/* Hard-coded Fallbacks für Layout-Stabilität */
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background-color: var(--quest-dark);
-  -webkit-tap-highlight-color: transparent;
+  background-color: var(--quest-bg) !important;
+  color: var(--quest-text) !important;
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.5;
 }
 
-/* Custom Scrollbar for the dark theme */
-::-webkit-scrollbar {
-  width: 6px;
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
 }
-::-webkit-scrollbar-track {
-  background: #1e293b;
+
+/* Falls Tailwind fehlschlägt, erzwingen wir ein Minimum an Struktur */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #0f172a;
+  border-bottom: 1px solid #1e293b;
 }
-::-webkit-scrollbar-thumb {
-  background: #334155;
-  border-radius: 10px;
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #0f172a;
+  padding: 0.5rem;
+  border-top: 1px solid #1e293b;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+
+.boss-bar-glow {
+  animation: glow 3s infinite ease-in-out;
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.8); }
+  100% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom UI Elements */
+input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
 }
